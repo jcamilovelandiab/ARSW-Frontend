@@ -1,3 +1,112 @@
-<p>
-  login works!
-</p>
+<div class="container">
+
+  <br><br>
+  <h1 class="text-center"> Evern Driver</h1>
+  <div class="row" style="justify-content:center;">
+
+    <div class="col-lg-8">
+      <!-- Login(SIGN IN) FORM -->
+      <form (submit)="loginUser()" id="login-form" method="post" role="form" style="display: block;">
+        <div class="form-group">
+          <input [(ngModel)]="correo" type="text" name="correoLogin" id="correoLogin" tabindex="1"
+            class="form-control" placeholder="Correo electrónico" value="">
+        </div>
+        <div class="form-group">
+          <input [(ngModel)]="clave" type="password" name="claveLogin" id="claveLogin" tabindex="2"
+            class="form-control" placeholder="Contraseña">
+        </div>
+        <div class="form-group text-center">
+          <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+          <label for="remember"> Remember me</label>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-6 col-sm-offset-3 text-center" style="margin:auto;">
+              <!--input type="submit" name="login-submit" id="login-submit" tabindex="4"
+                class="form-control btn btn-login" value="Log In"-->
+                <input type="submit" id="login-submit" class="btn btn-danger btn-round btn-sm"
+                  tabindex="4" value="log in">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="text-center">
+                <a href="#" tabindex="5" class="forgot-password">Forgot Password?</a>
+                <br>
+                <button type="button" class="btn btn-primary btn-link btn-round"
+                  data-target="#modalRegister" data-toggle="modal" tabindex="6">Register Now!</button>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- The Modal -->
+  <div class="modal" id="modalRegister">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h3 class="modal-title"  style="justify-content:center;">Register</h3>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form (submit)="registerUser()" id="signUp-form" method="post" role="form" style="display: block;">
+            <div class="form-group">
+              <input [(ngModel)]="nombres" type="text" name="nombresSignUp" id="nombresSignUp" tabIndex="1" class="form-control" placeholder="Nombres" value="">
+            </div>
+
+            <div class="form-group">
+              <input [(ngModel)]="apellidos" type="text" name="apellidosSignUp" id="apellidosSignUp" tabIndex="2" class="form-control" placeholder="Apellidos" value="">
+            </div>
+
+            <div class="form-group">
+              <input [(ngModel)]="fechaNacimiento" type="text" name="fechaNacimientoSignUp" id="fechaNacimientoSignUp" tabIndex="3" class="form-control" placeholder="Fecha de nacimiento dd/mm/aa" value="">
+            </div>
+
+            <div class="form-group">
+              <input [(ngModel)]="correo" type="text" name="correoSignUp" id="correoSignUp" tabindex="4" class="form-control" placeholder="Correo electrónico" value="">
+            </div>
+            
+            <div class="form-group">
+              <input [(ngModel)]="celular" type="text" name="celularSignUp" id="celularSignUp" tabindex="5" class="form-control" placeholder="Celular">
+            </div>
+
+            <div class="form-group">
+              <input [(ngModel)]="clave" type="password" name="claveSignUp" id="claveSignUp" tabindex="6" class="form-control" placeholder="Contraseña">
+            </div>
+            
+            <div class="form-group">
+              <input [(ngModel)]="clave" type="password" name="confirmarclaveSignUp" id="confirmarclaveSignUp" tabindex="6" class="form-control" placeholder="Confirmar contraseña">
+            </div>
+
+            <!--div class="form-group">
+              <input [(ngModel)]="confirmar-clave-SignUp" type="password" name="confirmar-clave-SignUp" id="confirmar-clave-SignUp" tabindex="7" class="form-control" placeholder="Confirm password">
+            </div-->
+
+            <div class="form-group text-center">
+              <input [(ngModel)]="driverFlag" type="checkbox" tabindex="8" class="" name="driverFlag" id="driverFlag">
+              <label for="driverFlag"> Desea trabajar con nosotros siendo conductor?</label>
+            </div>
+            
+          </form>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal">Sign up</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>

@@ -14,6 +14,15 @@ import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { LoginComponent } from './login/login.component';
 
+
+import { DashboardComponent } from './dashboard/dashboard.component';
+import {UserProfileComponent} from './user-profile/user-profile.component';
+import {TableListComponent} from './table-list/table-list.component'
+import {TypographyComponent} from './typography/typography.component'
+import {IconsComponent} from './icons/icons.component'
+import {MapsComponent} from './maps/maps.component'
+import {NotificationsComponent} from './notifications/notifications.component'
+
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -28,7 +37,14 @@ import { LoginComponent } from './login/login.component';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    LoginComponent
+    LoginComponent,
+    /*DashboardComponent,
+    UserProfileComponent,
+    TableListComponent,
+    TypographyComponent,
+    IconsComponent,
+    MapsComponent,
+    NotificationsComponent*/
   ],
   providers: [],
   bootstrap: [AppComponent]

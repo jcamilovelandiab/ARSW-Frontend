@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +8,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  public correo;
+  public nombres;
+  public apellidos;
+  public fechaNacimiento;
+  public celular;
+  public clave;
+  public confirmar_clave;
+  public driverFlag;
+
+  constructor(
+    private router: Router
+  ){}
+
+  public loginUser(){
+    /*event.preventDefault()
+    const target = event.target
+    const email = target.querySelector('#emailLogin').value
+    const password = target.querySelector('#passwordLogin').value
+    console.log(email, password);*/
+    
+    const user = {
+      'correo': this.correo,
+      'clave': this.clave
+    };
+
+    //console.log("WE ARE ON LOGIN ",this.correo, this.clave);
+    //this.authService.getUserDetails(this.correo, this.clave);
+    this.router.navigate(['/home']);
+  }
 
   ngOnInit() {
   }

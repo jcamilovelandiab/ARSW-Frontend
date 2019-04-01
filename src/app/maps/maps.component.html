@@ -9,12 +9,12 @@
         </div>
         <div class="card-body ">
           <!--<div id="map" class="map"></div> -->
-            <form>
+            <form method="post" role="form">
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
                     <label>Place of Departure</label>
-                    <input [(ngModel)]="departurePlace" type="text" class="form-control" placeholder="Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
+                    <input [(ngModel)]="departurePlace" name="departurePlace" type="text" class="form-control" placeholder="Address" value="Bld Mihail ">
                   </div>
                 </div>
               </div>
@@ -22,7 +22,7 @@
                 <div class="col-md-12">
                   <div class="form-group">
                     <label>Place of Arrival</label>
-                    <input [(ngModel)]="arrivalPlace" type="text" class="form-control" placeholder="Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
+                    <input [(ngModel)]="arrivalPlace" name="arrivalPlace" type="text" class="form-control" placeholder="Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
                   </div>
                 </div>
               </div>
@@ -30,7 +30,7 @@
                 <div class="col-md-4 pr-1">
                   <div class="form-group">
                     <label>Expected Rate</label>
-                    <input [(ngModel)]="rate" type="number" class="form-control" placeholder="price of the rate">
+                    <input [(ngModel)]="rate" name="rate" type="number" class="form-control" placeholder="price of the rate">
                   </div>
                 </div>
               </div>

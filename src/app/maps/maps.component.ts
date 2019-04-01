@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { AskTripServiceService } from '../ask-trip-service.service';
+import {LoginComponent} from '../login/login.component';
+import { ActivatedRoute, Router } from '@angular/router';
 
 declare const google: any;
 
-interface Marker {
-lat: number;
-lng: number;
-label?: string;
-draggable?: boolean;
-}
+/*interface Marker {
+    lat: number;
+    lng: number;
+    label?: string;
+    draggable?: boolean;
+}*/
 @Component({
   selector: 'app-maps',
   templateUrl: './maps.component.html',
@@ -19,10 +21,10 @@ export class MapsComponent implements OnInit {
     public departurePlace;
     public arrivalPlace;
     public rate;
-    public driverEmail;
-    public passengerEmail;
+    public passengerEmail = "correo@arsw";
 
-  constructor(private toastr: ToastrService, private askTripService: AskTripServiceService) { }
+  constructor(private toastr: ToastrService, private askTripService: AskTripServiceService,
+        private router: Router) { }
   
   showNotification(from, align){
 
@@ -35,26 +37,28 @@ export class MapsComponent implements OnInit {
         toastClass: "alert alert-success alert-with-icon",
         positionClass: 'toast-' + from + '-' +  align
        });
-    
     }
   public addTrip(){
+    console.log("EMAIL", this.passengerEmail);
       const trip = {
         'lugarOrigen': this.departurePlace,
         'lugarDestino': this.arrivalPlace,
         'costo': this.rate,
-        
-      }
-      const email ={
         'correoPasajero': this.passengerEmail
       }
-      this.askTripService.addTrip(trip, email)
-      this.showNotification('top','center')
+      console.log("TRIP:",trip)
+      
+      this.askTripService.addTrip(trip).subscribe(response => {
+            console.log(response);
+            this.router.navigate(['/']);
+        });
 
+      this.showNotification('top','center')
   }
 
 
   ngOnInit() {
-
+    /*
     var myLatlng = new google.maps.LatLng(40.748817, -73.985428);
     var mapOptions = {
         zoom: 13,
@@ -155,7 +159,7 @@ export class MapsComponent implements OnInit {
     });
 
     // To add the marker to the map, call setMap();
-    marker.setMap(map);
+    marker.setMap(map);*/
   }
 
 }

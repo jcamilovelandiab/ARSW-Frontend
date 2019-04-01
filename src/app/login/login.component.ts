@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../auth.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -18,6 +20,8 @@ export class LoginComponent implements OnInit {
   public driverFlag;
 
   constructor(
+    private toastr: ToastrService,
+    private authService: AuthService,
     private router: Router
   ){}
 
@@ -26,13 +30,25 @@ export class LoginComponent implements OnInit {
       'correo': this.correo,
       'clave': this.clave
     };
+    //console.log("ESTAMOS EN LOGIN",user);
     //console.log("WE ARE ON LOGIN ",this.correo, this.clave);
     //this.authService.getUserDetails(this.correo, this.clave);
-   
+    this.router.navigate(['/maps']);
   }
   public registerUser(){
-    this.router.navigate(['/maps']);
-   
+    const userSave = {
+      'correo': this.correo,
+      'nombres': this.nombres,
+      'apellidos': this.apellidos,
+      'celular': this.celular,
+      'clave': this.clave
+    }
+    console.log(userSave);
+    this.authService.savePasajero(userSave)
+      .subscribe(response => {
+          console.log(response);
+          this.router.navigate(['/']);
+        });
   }
 
   ngOnInit() {

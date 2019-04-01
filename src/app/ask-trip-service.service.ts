@@ -5,10 +5,12 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AskTripServiceService {
-  private uri = 'http://'+window.location.hostname+':8080/v1';
+  private uri = 'http://backarsw.herokuapp.com/v1/viajes';
   constructor(private http : HttpClient
     ) { }
-  public addTrip(trip, correo){
-    return this.http.post(this.uri+'/pasajeros/'+correo+"/viajes",trip);
+  public addTrip(trip){
+    console.log("TRIP HTTP",trip)
+    return this.http.post(this.uri+'/saveViaje',trip);
   }
+  
 }

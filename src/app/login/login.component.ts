@@ -35,7 +35,11 @@ export class LoginComponent implements OnInit {
 
     //console.log("WE ARE ON LOGIN ",this.correo, this.clave);
     //this.authService.getUserDetails(this.correo, this.clave);
-    this.router.navigate(['/home']);
+   
+  }
+  public registerUser(){
+    this.router.navigate(['/maps']);
+   
   }
 
   ngOnInit() {

@@ -16,21 +16,30 @@ import {NotificationsComponent} from './notifications/notifications.component'
 import {HomeComponent} from './home/home.component';
 
 const routes: Routes =[
-  {
+  /*{
     path:'home',
     redirectTo: 'dashboard',
     pathMatch: 'full'
   },
   {
-    path: 'home',
+    path: 'home',*/
+//=======
+
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full',
+  },{
+    path: '',
     component: AdminLayoutComponent,
     children: [
         {
       path: '',
       loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
   }]},
+
   
-  {
+  /*{
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'
@@ -38,11 +47,17 @@ const routes: Routes =[
   {
     path:'login',
     component: LoginComponent
-  },/*
+  },
   {
     path:'home',
     component: HomeComponent
   }*/
+
+  {
+    path: '**',
+    redirectTo: 'login'
+  }
+  
 ];
 
 @NgModule({

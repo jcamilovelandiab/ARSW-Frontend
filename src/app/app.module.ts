@@ -20,7 +20,8 @@ import {UserProfileComponent} from './user-profile/user-profile.component';
 import {TableListComponent} from './table-list/table-list.component'
 import {IconsComponent} from './icons/icons.component'
 import {MapsComponent} from './maps/maps.component'
-import {NotificationsComponent} from './notifications/notifications.component'
+import {NotificationsComponent} from './notifications/notifications.component';
+import { HomeComponent } from './home/home.component'
 
 @NgModule({
   imports: [
@@ -37,6 +38,7 @@ import {NotificationsComponent} from './notifications/notifications.component'
     AppComponent,
     AdminLayoutComponent,
     LoginComponent,
+    HomeComponent,
     /*DashboardComponent,
     UserProfileComponent,
     TableListComponent,

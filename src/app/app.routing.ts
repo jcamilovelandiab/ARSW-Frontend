@@ -13,18 +13,15 @@ import {TableListComponent} from './table-list/table-list.component'
 import {IconsComponent} from './icons/icons.component'
 import {MapsComponent} from './maps/maps.component'
 import {NotificationsComponent} from './notifications/notifications.component'
+import {HomeComponent} from './home/home.component';
 
 const routes: Routes =[
-
-  /*{  
-    path: 'home',
-    redirectTo: 'dashboard',
-  },*/
   {
-    path: '',
-    redirectTo: 'maps',
-    pathMatch: 'full',
-  },{
+    path:'home',
+    redirectTo: 'dashboard',
+    pathMatch: 'full'
+  },
+  {
     path: 'home',
     component: AdminLayoutComponent,
     children: [
@@ -32,11 +29,7 @@ const routes: Routes =[
       path: '',
       loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
   }]},
-  {
-    path: '**',
-    redirectTo: 'maps'
-  }
-  /*
+  
   {
     path: '',
     redirectTo: 'login',
@@ -45,8 +38,11 @@ const routes: Routes =[
   {
     path:'login',
     component: LoginComponent
-  },*/
-  
+  },/*
+  {
+    path:'home',
+    component: HomeComponent
+  }*/
 ];
 
 @NgModule({

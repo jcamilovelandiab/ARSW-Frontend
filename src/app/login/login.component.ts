@@ -21,18 +21,11 @@ export class LoginComponent implements OnInit {
     private router: Router
   ){}
 
-  public loginUser(){
-    /*event.preventDefault()
-    const target = event.target
-    const email = target.querySelector('#emailLogin').value
-    const password = target.querySelector('#passwordLogin').value
-    console.log(email, password);*/
-    
+  public loginUser(){    
     const user = {
       'correo': this.correo,
       'clave': this.clave
     };
-
     //console.log("WE ARE ON LOGIN ",this.correo, this.clave);
     //this.authService.getUserDetails(this.correo, this.clave);
    

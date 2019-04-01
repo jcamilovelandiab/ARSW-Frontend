@@ -35,7 +35,6 @@ import { HomeComponent } from './home/home.component'
   ],
   declarations: [
     AppComponent,
-<<<<<<< HEAD
     AdminLayoutComponent,
     LoginComponent,
     HomeComponent,
@@ -46,10 +45,7 @@ import { HomeComponent } from './home/home.component'
     IconsComponent,
     MapsComponent,
     NotificationsComponent*/
-=======
-    AdminLayoutComponent
-    
->>>>>>> 80c4460fd7f2da0d704aa1fb4c497db15940c778
+
   ],
   providers: [],
   bootstrap: [AppComponent]

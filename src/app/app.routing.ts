@@ -16,16 +16,12 @@ import {NotificationsComponent} from './notifications/notifications.component'
 
 const routes: Routes =[
 
-  /*{  
-    path: 'home',
-    redirectTo: 'dashboard',
-  },*/
   {
     path: '',
-    redirectTo: 'maps',
+    redirectTo: 'login',
     pathMatch: 'full',
   },{
-    path: 'home',
+    path: '',
     component: AdminLayoutComponent,
     children: [
         {
@@ -34,18 +30,8 @@ const routes: Routes =[
   }]},
   {
     path: '**',
-    redirectTo: 'maps'
+    redirectTo: 'login'
   }
-  /*
-  {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  },
-  {
-    path:'login',
-    component: LoginComponent
-  },*/
   
 ];
 

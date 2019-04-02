@@ -8,8 +8,8 @@ const app = express ();
 app.use (express.static ('./dist/now-ui-dashboard-angular'));
 
 app.get ('/*', función (req, res)=> {
-    
-res.sendFile (path.join (__ dirname + '/dist/now-ui-dashboard-angular/index.html'));
+   
+	res.sendFile (path.join (__ dirname + 'src/app/login/login.component.html'));
 });
 
 // Iniciar la aplicación escuchando en el puerto Heroku predeterminado
